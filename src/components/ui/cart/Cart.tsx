@@ -1,5 +1,6 @@
 import { IoCartOutline } from "react-icons/io5"
 import { Sheet, SheetContent, SheetTrigger } from "../sheet"
+import Link from "next/link"
 
 
 export const Cart = () => {
@@ -14,7 +15,18 @@ export const Cart = () => {
             </SheetTrigger>
             <SheetContent side={'right'} className="w-full">
                 <div className='flex flex-col items-center justify-between h-full py-8'>
-                    <h1>Carrito</h1>
+                    <div className="flex justify-center items-center h-[800px]">
+                        <IoCartOutline size={80} className="mx-5" />
+
+                        <div className="flex flex-col items-center">
+                            <h1 className="text-xl font-semibold">Tu carrito esta vacio</h1>
+                            <Link href={'/'}
+                                className="text-blue-400 mt-2 text-4xl"
+                            >
+                                Regresar
+                            </Link>
+                        </div>
+                    </div>
                 </div>
 
             </SheetContent>
