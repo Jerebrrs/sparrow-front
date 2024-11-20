@@ -1,3 +1,4 @@
+import { Footer } from "@/components";
 import Header from "@/components/ui/header/Header";
 
 export default function ShopLayout({
@@ -11,6 +12,7 @@ export default function ShopLayout({
             <div className="px-0 sm:px-10">
                 {children}
             </div>
+            <Footer />
         </main>
     );
 }
