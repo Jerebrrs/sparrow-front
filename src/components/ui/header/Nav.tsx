@@ -1,67 +1,77 @@
-import { motion } from 'framer-motion';
+
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import React from 'react';
-import SelectButton from './SelectButton';
-import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubContent, MenubarSubTrigger, MenubarTrigger } from '../menubar';
-
-interface NavProps {
-  containerStyles?: string;
-  linkStyles?: string;
-  underLineStyles?: string;
-}
-
-const links = [
-  { path: '/', name: 'Home' },
+import React, { useEffect, useState } from 'react';
+import { ProductMenu } from './ProductMenu';
+import { Button } from '../button';
+import { Menu, User, X } from 'lucide-react';
+import { Logo } from './Logo';
+import { Cart } from '../cart/Cart';
 
 
-];
+const Nav = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-const Nav: React.FC<NavProps> = ({ containerStyles = '', linkStyles = '', underLineStyles = '' }) => {
-  const path = usePathname();
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
 
   return (
-    <nav className={`${containerStyles}`}>
-      {/* {links.map((link, index) => (
-        <Link href={link.path} key={index} classNameName={`capitalize ${linkStyles}`}>
-          {link.path === path && (
-            <motion.span
-              initial={{ y: '-100%' }}
-              animate={{ y: 0 }}
-              transition={{ type: 'tween' }}
-              layoutId='underline'
-              classNameName={`${underLineStyles}`}
-            />
-          )}
-          {link.name}
+    <nav className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${isScrolled ? "shadow-md" : ""}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className='flex items-center sm:hidden'>
+            <Button variant={"ghost"} size="icon" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+              {isMobileMenuOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
+            </Button>
+          </div>
+          <div className="flex-shrink-0 flex items-center justify-center sm:justify-start flex-grow sm:flex-grow-0">
 
 
-        </Link>
+            <Logo />
+          </div>
 
-      ))} */}
+          <div className="hidden sm:flex flex-grow justify-center space-x-6">
+            <ProductMenu />
+            <a>Preguntas Frecuentes</a>
+          </div>
 
 
-      {/* <div className="flex lg:hidden">
-        <button type="button" className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span className="sr-only">Open main menu</span>
-          <svg className="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path strokeLinecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div> */}
-      <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden sm:flex items-center space-x-4">
+            <Button variant="ghost" size="icon">
+              <User className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <Cart />
+            </Button>
+          </div>
 
-        <SelectButton />
+          <div className="flex items-center sm:hidden w-auto min-w-0">
+            <Button variant="ghost" size="icon">
+              <Cart />
+            </Button>
+          </div>
 
-        <a href="#" className="text-sm/6 font-semibold text-gray-900">Informacion</a>
-        <a href="#" className="text-sm/6 font-semibold text-gray-900">Blog</a>
-        {/* <a href="#" className="text-sm/6 font-semibold text-gray-900">Company</a> */}
+        </div>
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <ProductMenu isMobile />
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link
+                href="/cuenta"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              >
+                Mi Cuenta
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
-      {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" className="text-sm/6 font-semibold text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-      </div> */}
-
-
 
     </nav>
   );

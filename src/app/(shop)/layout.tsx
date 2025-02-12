@@ -7,7 +7,7 @@ export default function ShopLayout({
     children: React.ReactNode;
 }) {
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen overflow-x-hidden max-w-full">
             <Header />
             <div className="px-0 sm:px-10">
                 {children}
