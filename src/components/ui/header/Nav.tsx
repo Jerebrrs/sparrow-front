@@ -38,7 +38,7 @@ const Nav = () => {
 
           <div className="hidden sm:flex flex-grow justify-center space-x-6">
             <ProductMenu />
-            <a>Preguntas Frecuentes</a>
+            <p>Preguntas Frecuentes</p>
           </div>
 
 

@@ -30,9 +30,9 @@ export const Footer = () => {
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="flex justify-center items-center">
                     <span className="text-sm text-gray-500">
-                        © 2024{" "}
+
                         <Link href="#" className="hover:underline">
-                            Nika Software
+                            © 2025 Nika Software
                         </Link>
                     </span>
                 </div>

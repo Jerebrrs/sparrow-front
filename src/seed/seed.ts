@@ -1,4 +1,5 @@
 export interface SeedProduct {
+  id: number;
   description: string;
   images: string[];
   inStock: number;
@@ -21,7 +22,13 @@ interface SeedUser {
 }
 
 type ValidSizes = "XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL";
-type ValidCategories = "jeans" | "remeras" | "gorras" | "pants" | "hoodies" | "hats";
+type ValidCategories =
+  | "jeans"
+  | "remeras"
+  | "gorras"
+  | "pants"
+  | "hoodies"
+  | "hats";
 
 type ValidSubcategories = "Mom" | "Slim" | "Oversize";
 
@@ -38,10 +45,11 @@ export const initialData: SeedData = {
     { name: "Gorras" },
     { name: "Bermudas" },
     { name: "Camisas" },
-    { name: "Zapatillas" }
+    { name: "Zapatillas" },
   ],
   products: [
     {
+      id: 0,
       description: "Gorra premium de alta calidad.",
       images: ["gorramato.webp", "gorramato2.webp"],
       inStock: 7,
@@ -55,6 +63,7 @@ export const initialData: SeedData = {
       isNew: true,
     },
     {
+      id: 1,
       description: "Jean clásico para un estilo moderno.",
       images: ["jcroynos.webp", "jcroynos1.webp"],
       inStock: 10,
@@ -69,6 +78,7 @@ export const initialData: SeedData = {
       isNew: false,
     },
     {
+      id: 2,
       description: "Remera oversized de algodón.",
       images: ["socrates.jpg", "socrates1.jpg"],
       inStock: 50,
@@ -83,6 +93,7 @@ export const initialData: SeedData = {
       isNew: true,
     },
     {
+      id: 3,
       description: "Bermuda mom de jean negro.",
       images: ["bermuda2.webp", "bermuda3.webp"],
       inStock: 0,
@@ -95,7 +106,7 @@ export const initialData: SeedData = {
       category: "jeans",
       subcategory: "mom",
       isNew: true,
-    }
+    },
   ],
   users: [
     {
