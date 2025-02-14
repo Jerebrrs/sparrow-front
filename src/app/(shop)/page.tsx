@@ -1,5 +1,5 @@
 export const revalidate = 60; // 60 segundos
-import { InstagramSection, ProductGrid, Title } from '@/components';
+import { BestSellers, InstagramSection, ProductGrid, Title } from '@/components';
 import { initialData } from '@/seed/seed';
 import { redirect } from 'next/navigation';
 // import { getPaginatedProductWithImages } from '@/actions';
@@ -18,7 +18,7 @@ export default async function Home({ searchParams }: Props) {
   return (
     <>
       <Title
-        title="Tienda"
+        title="No podemos cambiar el mundo sino cambiamos nosotros primero."
         subtitle="Todos los productos"
         className="mb-2 text-center"
       />
@@ -26,7 +26,7 @@ export default async function Home({ searchParams }: Props) {
       <ProductGrid
         products={products}
       />
-
+      <BestSellers products={products} />
       <InstagramSection />
 
     </>

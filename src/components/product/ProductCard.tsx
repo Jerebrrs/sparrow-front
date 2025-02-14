@@ -11,27 +11,27 @@ import { ShoppingCart } from "lucide-react";
 
 interface ProductCardProps {
     id: number;
-    description: string;
+    description?: string;
     images: string[];
-    inStock: number;
+    inStock?: number;
     priceOriginal: number;
     price: number;
     sizes: string[];
     slug: string;
-    tags: string[];
+    tags?: string[];
     title: string;
-    category: string;
+    category?: string;
     subcategory?: string;
-    isNew: boolean;
+    isNew?: boolean;
 }
 
-export const ProductCard = ({ category, description, id, images, inStock, isNew, price, priceOriginal, sizes, slug, tags, title, subcategory }: ProductCardProps) => {
+export const ProductCard = ({ id, images, isNew, price, priceOriginal, sizes, slug, title }: ProductCardProps) => {
 
     const discount = priceOriginal ? Math.round((1 - price / priceOriginal) * 100) : 0;
     const [displeyImage, setDispleyImage] = useState(images[0]);
     return (
-        <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <Link href={`/producto/${id}`} className="block">
+        <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-sm">
+            <Link href={`/product/${slug}`} className="block">
                 <div className="relative aspect-square">
                     <Image
                         src={`/products/${displeyImage}`}
@@ -67,7 +67,7 @@ export const ProductCard = ({ category, description, id, images, inStock, isNew,
                     </div>
                     <Button size="sm">
                         <ShoppingCart className="mr-2 h-4 w-4" />
-                        Añadir
+                        +
                     </Button>
                 </CardFooter>
 

@@ -107,6 +107,21 @@ export const initialData: SeedData = {
       subcategory: "mom",
       isNew: true,
     },
+    {
+      id: 4,
+      description: "Bermuda mom de jean negro.",
+      images: ["bermuda2.webp", "bermuda3.webp"],
+      inStock: 0,
+      priceOriginal: 50,
+      price: 35,
+      sizes: ["M", "L", "XL", "XXL"],
+      slug: "bermuda_mom_negra",
+      tags: ["bermuda", "jean"],
+      title: "Bermuda Mom Negra",
+      category: "jeans",
+      subcategory: "mom",
+      isNew: true,
+    },
   ],
   users: [
     {
