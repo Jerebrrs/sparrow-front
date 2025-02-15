@@ -1,3 +1,5 @@
+export * from "./dashboard/DashboardSidebar";
+
 export * from "./product/BestSellers";
 
 export * from "./product/slidesshow/ProductSlidesShow";

@@ -43,9 +43,12 @@ const Nav = () => {
 
 
           <div className="hidden sm:flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
+            <Link href={"/admin"}>
+              <Button variant="ghost" size="icon">
+                <User className="h-5 w-5" />
+              </Button>
+            </Link>
+
             <Button variant="ghost" size="icon">
               <Cart />
             </Button>
@@ -63,7 +66,7 @@ const Nav = () => {
             <ProductMenu isMobile />
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link
-                href="/cuenta"
+                href="/admin"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
               >
                 Mi Cuenta

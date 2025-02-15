@@ -1,10 +1,6 @@
 export const revalidate = 60; // 60 segundos
 import { BestSellers, InstagramSection, ProductGrid, Title } from '@/components';
 import { initialData } from '@/seed/seed';
-import { redirect } from 'next/navigation';
-// import { getPaginatedProductWithImages } from '@/actions';
-// import { Pagination, ProductGrid, Title } from '@/components';
-
 interface Props {
   searchParams: {
     page?: string;
