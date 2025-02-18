@@ -1,3 +1,5 @@
+export * from "./product/newProduct/ProductForm";
+
 export * from "./dashboard/DashboardSidebar";
 
 export * from "./product/BestSellers";

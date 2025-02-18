@@ -3,7 +3,9 @@ import { DashboardSidebar } from "@/components";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@radix-ui/react-separator";
-import { usePathname } from "next/navigation";
+import { usePathname, } from "next/navigation";
+import path from "path";
+
 
 export default function AdminLayout({
     children
@@ -11,14 +13,19 @@ export default function AdminLayout({
     children: React.ReactNode;
 }) {
 
-    const router = usePathname();
 
+    const path = usePathname();
     const getPageTitle = () => {
-        const path = router
-        if (path === '/admin') return 'Admin'
-        if (path.startsWith('/productos')) return 'Productos'
-        if (path === '/ordenes') return 'Órdenes'
-        if (path === '/perfil') return 'Mi Perfil'
+
+
+        const titles: Record<string, string> = {
+            '/admin': '',
+            '/admin/newProduct': 'Nuevo Producto',
+            '/admin/products': 'Productos'
+        }
+
+        if (titles[path] !== undefined) return titles[path];
+
         return 'Página'
     }
 
@@ -37,14 +44,14 @@ export default function AdminLayout({
                                         Deashboard
                                     </BreadcrumbLink>
                                 </BreadcrumbItem>
-                                <BreadcrumbSeparator />
+                                {path === '/admin' ? '' : <BreadcrumbSeparator />}
                                 <BreadcrumbItem>
                                     <BreadcrumbPage>{getPageTitle()}</BreadcrumbPage>
                                 </BreadcrumbItem>
                             </BreadcrumbList>
                         </Breadcrumb>
                     </header>
-                    <main className="flex-grow p-6 overflow-auto w-full">
+                    <main className="flex-grow overflow-auto w-full">
                         {children}
                     </main>
                 </SidebarInset>

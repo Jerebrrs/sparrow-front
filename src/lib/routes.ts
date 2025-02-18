@@ -1,16 +1,9 @@
-import {
-  ShoppingBag,
-  ClipboardList,
-  User,
-  LogOut,
-  SquareTerminal,
-  LucideSparkles,
-} from "lucide-react";
+import { ShoppingBag, ClipboardList, User, LucideSparkles } from "lucide-react";
 import { LuAlignEndHorizontal } from "react-icons/lu";
 export const routesAdmin = [
   {
-    title: "Ventas",
-    url: "#",
+    title: "Panel",
+    url: "/admin",
     icon: LuAlignEndHorizontal,
     isActive: true,
   },
@@ -18,8 +11,8 @@ export const routesAdmin = [
     title: "Productos",
     icon: ShoppingBag,
     items: [
-      { title: "Crear Producto", url: "/admin/product" },
-      { title: "Listado de Productos", url: "/productos" },
+      { title: "Crear Producto", url: "/admin/newProduct" },
+      { title: "Listado de Productos", url: "/admin/products" },
       { title: "Categorías", url: "/productos/categorias" },
       { title: "SubCategorías", url: "/productos/categorias" },
     ],
@@ -41,7 +34,7 @@ export const routesAdmin = [
   },
   {
     title: "Social",
-    icon: LucideSparkles ,
+    icon: LucideSparkles,
     url: "/cerrar-sesion",
   },
 ];
