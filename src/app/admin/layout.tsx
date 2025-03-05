@@ -31,7 +31,7 @@ export default function AdminLayout({
 
     return (
         <SidebarProvider>
-            <div className="flex h-screen w-full">
+            <div className="flex h-screen w-full h-full">
                 <DashboardSidebar />
                 <SidebarInset className="flex flex-col flex-grow">
                     <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -51,7 +51,7 @@ export default function AdminLayout({
                             </BreadcrumbList>
                         </Breadcrumb>
                     </header>
-                    <main className="flex-grow overflow-auto w-full">
+                    <main className="flex-grow overflow-auto w-full h-full">
                         {children}
                     </main>
                 </SidebarInset>
