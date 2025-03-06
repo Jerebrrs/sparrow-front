@@ -1,3 +1,5 @@
+export * from "./product/productsAdmin/ProductDashboard";
+
 export * from "./product/newProduct/ProductForm";
 
 export * from "./dashboard/DashboardSidebar";

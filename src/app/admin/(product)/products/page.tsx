@@ -1,8 +1,10 @@
+import { ProductDashboard } from "@/components";
+import { initialData } from "@/seed/seed";
+
 export default function ProductsPage() {
     return (
-
-        <div>Lista de Productos</div>
+        <div className="container mx-auto py-10">
+            <ProductDashboard initialProducts={initialData.products} />
+        </div>
     )
-
-
 }

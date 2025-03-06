@@ -41,7 +41,7 @@ export const ProductSlidesShow = ({ images, title, className }: Props) => {
                         <Image
                             width={550}
                             height={350}
-                            src={`/products/${image}`}
+                            src={image}
                             alt={title}
                             className='rounded-lg object-fill'
                         />
@@ -63,7 +63,7 @@ export const ProductSlidesShow = ({ images, title, className }: Props) => {
                         <Image
                             width={100}
                             height={100}
-                            src={`/products/${image}`}
+                            src={image}
                             alt={title}
                             className="rounded-lg border-2 border-transparent hover:border-primary transition-all duration-300"
                         />

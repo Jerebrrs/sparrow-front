@@ -34,7 +34,7 @@ export const ProductCard = ({ id, images, isNew, price, priceOriginal, sizes, sl
             <Link href={`/product/${slug}`} className="block">
                 <div className="relative aspect-square">
                     <Image
-                        src={`/products/${displeyImage}`}
+                        src={displeyImage}
                         alt={title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

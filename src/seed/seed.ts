@@ -51,7 +51,7 @@ export const initialData: SeedData = {
     {
       id: 0,
       description: "Gorra premium de alta calidad.",
-      images: ["gorramato.webp", "gorramato2.webp"],
+      images: ["/products/gorramato.webp", "/products/gorramato2.webp"],
       inStock: 7,
       priceOriginal: 90,
       price: 75,
@@ -65,7 +65,7 @@ export const initialData: SeedData = {
     {
       id: 1,
       description: "Jean clásico para un estilo moderno.",
-      images: ["jcroynos.webp", "jcroynos1.webp"],
+      images: ["/products/jcroynos.webp", "/products/jcroynos1.webp"],
       inStock: 10,
       priceOriginal: 150,
       price: 130,
@@ -80,7 +80,7 @@ export const initialData: SeedData = {
     {
       id: 2,
       description: "Remera oversized de algodón.",
-      images: ["socrates.jpg", "socrates1.jpg"],
+      images: ["/products/socrates.jpg", "/products/socrates1.jpg"],
       inStock: 50,
       priceOriginal: 50,
       price: 40,
@@ -95,7 +95,7 @@ export const initialData: SeedData = {
     {
       id: 3,
       description: "Bermuda mom de jean negro.",
-      images: ["bermuda2.webp", "bermuda3.webp"],
+      images: ["/products/bermuda2.webp", "/products/bermuda3.webp"],
       inStock: 0,
       priceOriginal: 50,
       price: 35,
@@ -110,7 +110,7 @@ export const initialData: SeedData = {
     {
       id: 4,
       description: "Bermuda mom de jean negro.",
-      images: ["bermuda2.webp", "bermuda3.webp"],
+      images: ["/products/bermuda2.webp", "/products/bermuda3.webp"],
       inStock: 0,
       priceOriginal: 50,
       price: 35,

@@ -32,7 +32,7 @@ export const ProductMobileSlidesShow = ({ images, title, className }: Props) => 
                         <Image
                             width={400}
                             height={300}
-                            src={`/products/${image}`}
+                            src={image}
                             alt={title}
                             className='object-fill'
                         />
