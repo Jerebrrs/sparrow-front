@@ -1,3 +1,9 @@
+export * from "./product/categories/CategoriesTable";
+
+export * from"./product/categories/CategoryDetailModal";
+
+export * from "./product/categories/CategoryForm";
+
 export * from "./product/productsAdmin/ProductDashboard";
 
 export * from "./product/newProduct/ProductForm";

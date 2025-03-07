@@ -13,8 +13,8 @@ export const routesAdmin = [
     items: [
       { title: "Crear Producto", url: "/admin/newProduct" },
       { title: "Listado de Productos", url: "/admin/products" },
-      { title: "Categorías", url: "/productos/categorias" },
-      { title: "SubCategorías", url: "/productos/categorias" },
+      { title: "Categorías", url: "/admin/categories" },
+      // { title: "SubCategorías", url: "/admin/categorias" },
     ],
   },
   {

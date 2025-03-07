@@ -21,7 +21,8 @@ export default function AdminLayout({
         const titles: Record<string, string> = {
             '/admin': '',
             '/admin/newProduct': 'Nuevo Producto',
-            '/admin/products': 'Productos'
+            '/admin/products': 'Productos',
+            '/admin/categories': 'Categorias'
         }
 
         if (titles[path] !== undefined) return titles[path];
